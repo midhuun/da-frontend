@@ -44,19 +44,28 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
           <div className="space-y-4 text-gray-600">
             <p>
-              DA CLOTHING MANUFACTURER was born from a simple idea: every man deserves access to high-quality, 
-              comfortable t-shirts that make them feel confident and stylish. We started our journey with a 
-              focus on premium fabrics and perfect fit.
+              DA CLOTHING MANUFACTURER was born in the heart of Tiruppur, India's textile capital, 
+              through the vision and determination of one man - Arun. What started as a dream in a small 
+              workshop has grown into a testament to hard work, dedication, and unwavering commitment to quality.
             </p>
             <p>
-              Today, we've grown into a trusted manufacturer of men's t-shirts, specializing in quality 
-              craftsmanship and thoughtful design. Our team works tirelessly to create t-shirts that combine 
-              comfort, style, and durability.
+              Arun began his journey with nothing but a passion for creating premium clothing and a 
+              determination to make quality accessible to everyone. Working tirelessly by himself, he 
+              learned every aspect of the manufacturing process - from fabric selection to final stitching. 
+              To keep costs low and ensure affordable prices, he took on every role personally, working 
+              long hours to perfect each piece.
             </p>
             <p>
-              We believe that great t-shirts should be accessible, comfortable, and versatile. Every piece 
-              we manufacture is crafted with care, considering not just its aesthetic appeal but also 
-              its quality, comfort, and everyday wearability.
+              His philosophy was simple yet powerful: "Quality should never be compromised, and neither 
+              should affordability." By handling everything himself - from sourcing the finest materials 
+              to overseeing production - Arun was able to eliminate middlemen costs and pass the savings 
+              directly to customers while maintaining premium quality standards.
+            </p>
+            <p>
+              Today, DA CLOTHING MANUFACTURER stands as a testament to Arun's vision. While we've grown 
+              from that small workshop, we still maintain the same hands-on approach and commitment to 
+              quality that Arun established. Every t-shirt we produce carries his legacy of hard work, 
+              attention to detail, and dedication to providing premium quality at affordable prices.
             </p>
           </div>
         </div>
