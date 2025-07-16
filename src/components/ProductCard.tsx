@@ -37,33 +37,30 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="group relative">
       <Link to={`/product/${product.id}`}>
-        <div className="aspect-square w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <div className="aspect-product w-full overflow-hidden rounded-xl bg-gray-100 shadow-lg transition-all duration-300">
           <img
             src={primaryImage}
             alt={product.title}
-            className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+            className="h-full w-full object-cover object-center"
           />
         </div>
         
-        <div className="mt-4 space-y-2">
-          <h3 className="text-sm font-medium text-gray-900 group-hover:text-black transition-colors">
-            {product.title}
-          </h3>
-          
-          <p className="text-sm text-gray-600 line-clamp-2">
-            {product.description}
-          </p>
-          
-          <div className="flex items-center justify-between">
-            <p className="text-lg font-semibold text-black">
-              ₹{product.price.toLocaleString()}
-            </p>
+        <div className="mt-4 space-y-3">
+          <div className="flex items-start justify-between">
+            <div className="flex-1">
+              <h3 className="text-base font-semibold text-gray-900 group-hover:text-black transition-colors mb-1 text-shadow-sm">
+                {product.title}
+              </h3>
+              <p className="text-sm text-gray-500 uppercase tracking-wide font-medium">
+                {product.category}
+              </p>
+            </div>
             
             <div className="flex items-center space-x-1">
               {product.variants.map((variant, index) => (
                 <div
                   key={index}
-                  className="w-4 h-4 rounded-full border-2 border-gray-300"
+                  className="w-4 h-4 rounded-full border border-gray-300 shadow-sm"
                   style={{ backgroundColor: getColorValue(variant.color) }}
                   title={variant.color}
                 />
@@ -71,8 +68,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
           </div>
           
-          <div className="flex items-center space-x-2 text-xs text-gray-500">
-            <span>Sizes: {product.availableSizes.join(', ')}</span>
+          <p className="text-sm text-accent line-clamp-2 leading-relaxed">
+            {product.description}
+          </p>
+          
+          <div className="flex items-center justify-between pt-2">
+            <div>
+              <p className="text-xl font-bold text-black">
+                ₹{product.price.toLocaleString()}
+              </p>
+              <p className="text-xs text-gray-500">
+                Sizes: {product.availableSizes.join(', ')}
+              </p>
+            </div>
           </div>
         </div>
       </Link>

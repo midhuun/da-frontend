@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="bg-white shadow-sm border-b sticky top-0 z-40">
+      <header className="bg-white/95 backdrop-blur-md shadow-lg border-b sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleSearch}
-              className="p-2 rounded-md text-gray-600 hover:text-black hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-lg text-gray-600 hover:text-black hover:bg-gray-100 transition-all duration-300 hover:scale-105"
             >
               <Search className="h-5 w-5" />
             </button>
