@@ -5,20 +5,22 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ProductDetails from './components/ProductDetails';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-white">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-          </Routes>
-        </main>
+    <ErrorBoundary>
+      <Router>
+        <div className="min-h-screen bg-white">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+            </Routes>
+          </main>
         
         {/* Footer */}
         <footer className="bg-black text-white py-12 mt-16">
@@ -54,6 +56,7 @@ function App() {
         </footer>
       </div>
     </Router>
+    </ErrorBoundary>
   );
 }
 
