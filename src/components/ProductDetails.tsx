@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Share2 } from 'lucide-react';
 import { Product } from '../types/Product';
@@ -36,7 +36,9 @@ const ProductDetails: React.FC = () => {
   const { products, loading } = useProducts();
 
   const product = products.find(p => p.id === id);
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product]);
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
