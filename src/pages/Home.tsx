@@ -70,10 +70,27 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Mobile: Horizontal scrollable grid */}
+      <div className="md:hidden">
+        {[0, 1, 2].map(row => (
+          <div key={row} className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
+            {products.slice(row * 3, row * 3 + 3).map((product, index) => (
+              <div
+                key={product.id}
+                className={`flex-shrink-0 w-64 animate-fadeInUp stagger-${Math.min(row * 3 + index + 1, 9)}`}
+              >
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: Regular grid */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map((product, index) => (
-          <div 
-            key={product.id} 
+          <div
+            key={product.id}
             className={`animate-fadeInUp stagger-${Math.min(index + 1, 9)}`}
           >
             <ProductCard product={product} />
