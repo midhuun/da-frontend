@@ -34,9 +34,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const primaryVariant = product.variants[0];
   const primaryImage = primaryVariant?.images[0];
 
+  const handleProductClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="group relative">
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/product/${product.id}`} onClick={handleProductClick}>
         <div className="aspect-product w-full overflow-hidden rounded-xl bg-gray-100 shadow-lg transition-all duration-300">
           <img
             src={primaryImage}
